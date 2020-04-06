@@ -1,0 +1,16 @@
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+        //GEN-FIRST:event_button1ActionPerformed
+        jLabel1.setText("");
+        try{
+        String s = JOptionPane.showInputDialog("Wpisz co chcesz wyswietlic");
+        Scanner in = new Scanner(s);
+        String tekst = in.nextLine();
+        String s1 = String.format(tekst);
+        jLabel1.setText(s1);
+        }
+
+        catch(Exception e){
+            jLabel1.setText("B³¹d");
+        }
+    }   

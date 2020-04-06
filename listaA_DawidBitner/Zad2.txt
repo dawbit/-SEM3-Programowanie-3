@@ -1,0 +1,22 @@
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+        //GEN-FIRST:event_button1ActionPerformed
+        jLabel4.setText("");
+        jLabel3.setText("");
+        try{
+        String s = JOptionPane.showInputDialog("Podaj r");
+        Scanner in = new Scanner(s);
+        double r = in.nextDouble();
+        if (r > 0.0){
+        String s1 = String.format("r = %g",r);
+        double obj = (4.0*Math.PI * r*r*r)/3.0;
+        String s2 = String.format("Objetoœæ wynosi %g",obj);
+        jLabel4.setText(s2);
+        jLabel3.setText(s1);
+        }
+        else jLabel3.setText("Liczba powinna byæ dodatania");
+        }
+        catch(Exception e){
+            jLabel4.setText("B³¹d konwersji liczby");
+        }
+    }   

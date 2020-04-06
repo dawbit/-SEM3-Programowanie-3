@@ -1,0 +1,44 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author Dawid Bitner
+ */
+
+import java.util.*;
+
+public class Zad5{   
+    
+    static void Algorytm(double a11, double a12, double a21, double a22, double b1, double b2){ 
+        double W = a11*a22-a12*a21; 
+        double Wx1 = b1*a22-a12*b2; 
+        double Wx2 = a11*b2-b1*a21;
+        double x1, x2;
+        if (W==0&&Wx1==0&&Wx2==0) System.out.println("Uklad jest nieoznaczony");
+        else if (W==0&&(Wx1!=0||Wx2!=0)) System.out.println("Uk³ad jest sprzeczny");
+        else if (W!=0)
+        {
+            x1=(Wx1/W); x2=(Wx2/W);
+            System.out.printf("Rozwiazaniem ukladu rownan jest x1=%.3f i x2=%.3f\n", x1, x2);
+        }
+    } 
+    
+    public static void main(String[] args) {
+        double a11, a12, a21, a22, b1, b2;
+        Scanner in = new Scanner(System.in);
+        
+        System.out.println("Uk³ad liniowy 2x2 dany wzorem:\na11*x1+a12*x2=b1\na21*x1+a22*x2=b2\nPodaj kolejno wspó³czynniki:");
+        System.out.printf("a11: "); a11 = in.nextDouble();
+        System.out.printf("a12: "); a12 = in.nextDouble();
+        System.out.printf("b1: "); b1 = in.nextDouble();
+        System.out.printf("a12: "); a21 = in.nextDouble();
+        System.out.printf("a22: "); a22 = in.nextDouble();
+        System.out.printf("b2: "); b2 = in.nextDouble();
+        
+        Algorytm (a11, a12, a21, a22, b1, b2);
+    }
+}

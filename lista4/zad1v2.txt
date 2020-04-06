@@ -1,0 +1,15 @@
+package zad1;
+import java.util.Scanner;
+
+public class Zad1 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String liczbya = input.nextLine();
+        liczbya = liczbya.trim();
+        String[] liczby = liczbya.split(" ");
+        double s1 = Double.parseDouble(liczby[0]);
+        double s2 = Double.parseDouble(liczby[liczby.length - 1]);
+        System.out.println(s1+ "+" + s2 + "=" +(s1 + s2));
+    }
+    
+}

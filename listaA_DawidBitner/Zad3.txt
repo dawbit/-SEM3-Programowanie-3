@@ -1,0 +1,24 @@
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        jLabel5.setText("");
+        try{
+        String s3 = jTextField1.getText();
+        Scanner in1 = new Scanner(s3);
+        double r = in1.nextDouble();
+        if(r > 0.0){
+            String s4 = jTextField2.getText();
+            Scanner in2 = new Scanner(s4);
+            double h = in2.nextDouble();
+            if(h>0.0){
+                double pole = 2.0 * Math.PI *r *(r + h);
+                double obj = Math.PI * r * r * h;
+                jLabel4.setText("P = "+pole);
+                jLabel5.setText("V = "+obj);
+            }
+        else jLabel4.setText("Wysokoœæ powinna byæ dodatania");
+        }
+        else jLabel4.setText("Promieñ powinien byæ dodatni");
+        }
+        catch(Exception e){
+            jLabel4.setText("B³¹d");
+        }
+    }      
